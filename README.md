@@ -50,16 +50,13 @@
 1. 爱快:
    * 通过重置再接入，获取当前接入秒新设备的MAC地址
    * 使用爱快的 'DHCP静态分配' 把秒新设备的网关和DNS设置成'openwrt'的ip
-   * Имя сети SSID: `miaoxin`
-   * Защита: `WPA2-PSK`
-   * Пароль: `miaoxin666`
-   * Использовать NAT: включить
-   * Политика доступа: Без доступа в интернет
+
 2. Openwrt:
    * 在Openwrt中设置'自定义挟持域名' awm.airmx.cn > Openwrt_IP；i.airmx.cn > Openwrt_IP
    * 在Openwrt中利用Socat插件实现端口的转发，把挟持来的访问转发给正确的HA地址和端口
    * 秒新-MQTT服务 TCP 1883 IPv4-TCP x.x.x.x 25883【1833是秒新系统访问默认的端口不可改，x.x.x.x是你的HA系统IP，25883是插件设置里默认配置的端口】
    * 秒新-WEB服务 TCP 80 IPv4-TCP x.x.x.x 25880【80是秒新系统访问默认的端口不可改，x.x.x.x是你的HA系统IP，25880是插件设置里默认配置的端口】
+
 3. 正确设置后：
    * 把你的电脑网关调整到Openwrt后
    * 用浏览器访问awm.airmx.cn和i.airmx.cn， 正确的会显示：`AIRMX addon`
